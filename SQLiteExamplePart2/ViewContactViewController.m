@@ -13,6 +13,9 @@
 @end
 
 @implementation ViewContactViewController
+{
+    Person *_person;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,6 +29,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _person = self.person;
+    if (_person) {
+        self.firstName.text = _person.first;
+        self.lastName.text = _person.last;
+        self.phoneNumber.text = _person.phone;
+    }
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -42,19 +52,6 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -105,8 +102,8 @@
 }
 */
 
-/*
 #pragma mark - Navigation
+/*
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -115,5 +112,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(IBAction)cancel:(id)sender
+{
+    [self.delegate viewContactViewControllerDidCancel:self];
+}
+
 
 @end

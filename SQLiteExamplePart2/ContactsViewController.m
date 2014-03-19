@@ -122,6 +122,25 @@
         AddContactViewController *addContactViewController = [navigationController viewControllers][0];
         addContactViewController.delegate = self;
     }
+    if ([identifier isEqualToString:@"ViewContact"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        ViewContactViewController *viewContactViewController = [navigationController viewControllers][0];
+        viewContactViewController.delegate = self;
+        
+        // first we need to get the indexPath from the sender (the UITableViewCell)
+        NSObject *obj = (NSObject *)sender;
+        // validate the object type
+        if ([obj isKindOfClass:[UITableViewCell class]]) {
+            
+            // get the index path
+            UITableViewCell *cell = (UITableViewCell *)sender;
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+            
+            int index = (int)indexPath.row;
+            // get the person
+            viewContactViewController.person = (Person *)[_contactList objectAtIndex:index];
+        }
+    }
 }
 
 #pragma mark - AddContactViewControllerDelegate methods
@@ -140,5 +159,11 @@
     
 }
 
+#pragma mark - ViewContactViewcontrollerDelegate methods
+
+-(void) viewContactViewControllerDidCancel:(ViewContactViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

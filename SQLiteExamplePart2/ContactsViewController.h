@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "AddContactViewController.h"
+#import "ViewContactViewController.h"
 
-@interface ContactsViewController : UITableViewController <AddContactViewControllerDelegate>
+@interface ContactsViewController : UITableViewController <AddContactViewControllerDelegate, ViewContactViewControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *contactList;
 

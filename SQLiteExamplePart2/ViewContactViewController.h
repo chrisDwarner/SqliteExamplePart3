@@ -7,7 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Person.h"
+
+@class ViewContactViewController;
+
+@protocol ViewContactViewControllerDelegate <NSObject>
+
+-(void) viewContactViewControllerDidCancel:(ViewContactViewController *)controller;
+
+@end
 
 @interface ViewContactViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UITextField *firstName;
+@property (weak, nonatomic) IBOutlet UITextField *lastName;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
+
+@property( nonatomic, strong) Person *person;
+
+@property (nonatomic, weak) id<ViewContactViewControllerDelegate> delegate;
+
+-(IBAction)cancel:(id)sender;
 
 @end

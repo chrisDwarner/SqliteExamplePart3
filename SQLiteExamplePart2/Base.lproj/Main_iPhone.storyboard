@@ -131,8 +131,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="View Contact" id="I8p-jz-qnf">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hAM-Uh-ZZa"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hAM-Uh-ZZa">
+                            <connections>
+                                <action selector="cancel:" destination="HwS-A6-0GY" id="XyN-Nc-zvK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="firstName" destination="tAE-Zx-sTl" id="GIE-Zy-WDm"/>
+                        <outlet property="lastName" destination="O6u-aI-oH1" id="OSj-82-sdl"/>
+                        <outlet property="phoneNumber" destination="rgG-zV-kH0" id="vsA-AV-ydC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VGG-Et-8ke" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
