@@ -15,13 +15,17 @@
 		83B585F218D9378800DA8848 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B585F118D9378800DA8848 /* AppDelegate.m */; };
 		83B585F518D9378800DA8848 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B585F318D9378800DA8848 /* Main_iPhone.storyboard */; };
 		83B585F818D9378800DA8848 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B585F618D9378800DA8848 /* Main_iPad.storyboard */; };
-		83B585FB18D9378800DA8848 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B585FA18D9378800DA8848 /* ViewController.m */; };
 		83B585FD18D9378800DA8848 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83B585FC18D9378800DA8848 /* Images.xcassets */; };
 		83B5860418D9378800DA8848 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B5860318D9378800DA8848 /* XCTest.framework */; };
 		83B5860518D9378800DA8848 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B585E118D9378800DA8848 /* Foundation.framework */; };
 		83B5860618D9378800DA8848 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B585E518D9378800DA8848 /* UIKit.framework */; };
 		83B5860E18D9378800DA8848 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83B5860C18D9378800DA8848 /* InfoPlist.strings */; };
 		83B5861018D9378800DA8848 /* SQLiteExamplePart2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B5860F18D9378800DA8848 /* SQLiteExamplePart2Tests.m */; };
+		83B5862218D9383900DA8848 /* libSqLite3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B5861F18D9381800DA8848 /* libSqLite3.a */; };
+		83CEEABB18D9FD96001FF49F /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEABA18D9FD96001FF49F /* ContactsViewController.m */; };
+		83CEEABE18D9FE0C001FF49F /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEABD18D9FE0C001FF49F /* AddContactViewController.m */; };
+		83CEEAC118D9FE73001FF49F /* ViewContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEAC018D9FE73001FF49F /* ViewContactViewController.m */; };
+		83CEEAC518DA0435001FF49F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEAC418DA0435001FF49F /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +35,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 83B585DD18D9378800DA8848;
 			remoteInfo = SQLiteExamplePart2;
+		};
+		83B5861E18D9381800DA8848 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83B5861918D9381800DA8848 /* SqLite3.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 839EBD1F18C14D9D00595A9E;
+			remoteInfo = SqLite3;
+		};
+		83B5862018D9381800DA8848 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83B5861918D9381800DA8848 /* SqLite3.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 839EBD2F18C14D9D00595A9E;
+			remoteInfo = SqLite3Tests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -47,14 +65,21 @@
 		83B585F118D9378800DA8848 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		83B585F418D9378800DA8848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		83B585F718D9378800DA8848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		83B585F918D9378800DA8848 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		83B585FA18D9378800DA8848 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		83B585FC18D9378800DA8848 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		83B5860218D9378800DA8848 /* SQLiteExamplePart2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SQLiteExamplePart2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B5860318D9378800DA8848 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		83B5860B18D9378800DA8848 /* SQLiteExamplePart2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SQLiteExamplePart2Tests-Info.plist"; sourceTree = "<group>"; };
 		83B5860D18D9378800DA8848 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		83B5860F18D9378800DA8848 /* SQLiteExamplePart2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLiteExamplePart2Tests.m; sourceTree = "<group>"; };
+		83B5861918D9381800DA8848 /* SqLite3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SqLite3.xcodeproj; path = ../SqLite3/SqLite3.xcodeproj; sourceTree = "<group>"; };
+		83CEEAB918D9FD96001FF49F /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		83CEEABA18D9FD96001FF49F /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
+		83CEEABC18D9FE0C001FF49F /* AddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContactViewController.h; sourceTree = "<group>"; };
+		83CEEABD18D9FE0C001FF49F /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
+		83CEEABF18D9FE73001FF49F /* ViewContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewContactViewController.h; sourceTree = "<group>"; };
+		83CEEAC018D9FE73001FF49F /* ViewContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewContactViewController.m; sourceTree = "<group>"; };
+		83CEEAC318DA0435001FF49F /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		83CEEAC418DA0435001FF49F /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B5862218D9383900DA8848 /* libSqLite3.a in Frameworks */,
 				83B585E418D9378800DA8848 /* CoreGraphics.framework in Frameworks */,
 				83B585E618D9378800DA8848 /* UIKit.framework in Frameworks */,
 				83B585E218D9378800DA8848 /* Foundation.framework in Frameworks */,
@@ -88,6 +114,7 @@
 				83B5860918D9378800DA8848 /* SQLiteExamplePart2Tests */,
 				83B585E018D9378800DA8848 /* Frameworks */,
 				83B585DF18D9378800DA8848 /* Products */,
+				83B5861918D9381800DA8848 /* SqLite3.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,10 +145,16 @@
 				83B585F118D9378800DA8848 /* AppDelegate.m */,
 				83B585F318D9378800DA8848 /* Main_iPhone.storyboard */,
 				83B585F618D9378800DA8848 /* Main_iPad.storyboard */,
-				83B585F918D9378800DA8848 /* ViewController.h */,
-				83B585FA18D9378800DA8848 /* ViewController.m */,
 				83B585FC18D9378800DA8848 /* Images.xcassets */,
 				83B585E818D9378800DA8848 /* Supporting Files */,
+				83CEEAB918D9FD96001FF49F /* ContactsViewController.h */,
+				83CEEABA18D9FD96001FF49F /* ContactsViewController.m */,
+				83CEEABC18D9FE0C001FF49F /* AddContactViewController.h */,
+				83CEEABD18D9FE0C001FF49F /* AddContactViewController.m */,
+				83CEEABF18D9FE73001FF49F /* ViewContactViewController.h */,
+				83CEEAC018D9FE73001FF49F /* ViewContactViewController.m */,
+				83CEEAC318DA0435001FF49F /* Person.h */,
+				83CEEAC418DA0435001FF49F /* Person.m */,
 			);
 			path = SQLiteExamplePart2;
 			sourceTree = "<group>";
@@ -153,6 +186,15 @@
 				83B5860C18D9378800DA8848 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83B5861A18D9381800DA8848 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83B5861F18D9381800DA8848 /* libSqLite3.a */,
+				83B5862118D9381800DA8848 /* SqLite3Tests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +260,12 @@
 			mainGroup = 83B585D518D9378800DA8848;
 			productRefGroup = 83B585DF18D9378800DA8848 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 83B5861A18D9381800DA8848 /* Products */;
+					ProjectRef = 83B5861918D9381800DA8848 /* SqLite3.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				83B585DD18D9378800DA8848 /* SQLiteExamplePart2 */,
@@ -225,6 +273,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		83B5861F18D9381800DA8848 /* libSqLite3.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSqLite3.a;
+			remoteRef = 83B5861E18D9381800DA8848 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		83B5862118D9381800DA8848 /* SqLite3Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SqLite3Tests.xctest;
+			remoteRef = 83B5862018D9381800DA8848 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		83B585DC18D9378800DA8848 /* Resources */ = {
@@ -253,8 +318,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83B585FB18D9378800DA8848 /* ViewController.m in Sources */,
+				83CEEAC518DA0435001FF49F /* Person.m in Sources */,
 				83B585F218D9378800DA8848 /* AppDelegate.m in Sources */,
+				83CEEABE18D9FE0C001FF49F /* AddContactViewController.m in Sources */,
+				83CEEABB18D9FD96001FF49F /* ContactsViewController.m in Sources */,
+				83CEEAC118D9FE73001FF49F /* ViewContactViewController.m in Sources */,
 				83B585EE18D9378800DA8848 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +538,7 @@
 				83B5861518D9378800DA8848 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83B5861618D9378800DA8848 /* Build configuration list for PBXNativeTarget "SQLiteExamplePart2Tests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +547,7 @@
 				83B5861818D9378800DA8848 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
