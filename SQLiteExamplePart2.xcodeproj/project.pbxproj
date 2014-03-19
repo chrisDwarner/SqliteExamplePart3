@@ -26,6 +26,9 @@
 		83CEEABE18D9FE0C001FF49F /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEABD18D9FE0C001FF49F /* AddContactViewController.m */; };
 		83CEEAC118D9FE73001FF49F /* ViewContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEAC018D9FE73001FF49F /* ViewContactViewController.m */; };
 		83CEEAC518DA0435001FF49F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEAC418DA0435001FF49F /* Person.m */; };
+		83CEEACA18DA5888001FF49F /* SQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEAC718DA5888001FF49F /* SQLiteManager.m */; };
+		83CEEACB18DA5888001FF49F /* SQLiteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEAC918DA5888001FF49F /* SQLiteObject.m */; };
+		83CEEACE18DA60DC001FF49F /* database.sql in Resources */ = {isa = PBXBuildFile; fileRef = 83CEEACD18DA60DC001FF49F /* database.sql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,11 @@
 		83CEEAC018D9FE73001FF49F /* ViewContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewContactViewController.m; sourceTree = "<group>"; };
 		83CEEAC318DA0435001FF49F /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		83CEEAC418DA0435001FF49F /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		83CEEAC618DA5888001FF49F /* SQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQLiteManager.h; path = SQLiteExamplePart2/SQLiteManager.h; sourceTree = "<group>"; };
+		83CEEAC718DA5888001FF49F /* SQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLiteManager.m; path = SQLiteExamplePart2/SQLiteManager.m; sourceTree = "<group>"; };
+		83CEEAC818DA5888001FF49F /* SQLiteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQLiteObject.h; path = SQLiteExamplePart2/SQLiteObject.h; sourceTree = "<group>"; };
+		83CEEAC918DA5888001FF49F /* SQLiteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLiteObject.m; path = SQLiteExamplePart2/SQLiteObject.m; sourceTree = "<group>"; };
+		83CEEACD18DA60DC001FF49F /* database.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = database.sql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,7 @@
 		83B585D518D9378800DA8848 = {
 			isa = PBXGroup;
 			children = (
+				83CEEACC18DA5896001FF49F /* SQLite classes */,
 				83B585E718D9378800DA8848 /* SQLiteExamplePart2 */,
 				83B5860918D9378800DA8848 /* SQLiteExamplePart2Tests */,
 				83B585E018D9378800DA8848 /* Frameworks */,
@@ -166,6 +175,7 @@
 				83B585EA18D9378800DA8848 /* InfoPlist.strings */,
 				83B585ED18D9378800DA8848 /* main.m */,
 				83B585EF18D9378800DA8848 /* SQLiteExamplePart2-Prefix.pch */,
+				83CEEACD18DA60DC001FF49F /* database.sql */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -195,6 +205,17 @@
 				83B5862118D9381800DA8848 /* SqLite3Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		83CEEACC18DA5896001FF49F /* SQLite classes */ = {
+			isa = PBXGroup;
+			children = (
+				83CEEAC618DA5888001FF49F /* SQLiteManager.h */,
+				83CEEAC718DA5888001FF49F /* SQLiteManager.m */,
+				83CEEAC818DA5888001FF49F /* SQLiteObject.h */,
+				83CEEAC918DA5888001FF49F /* SQLiteObject.m */,
+			);
+			name = "SQLite classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +320,7 @@
 				83B585F818D9378800DA8848 /* Main_iPad.storyboard in Resources */,
 				83B585FD18D9378800DA8848 /* Images.xcassets in Resources */,
 				83B585F518D9378800DA8848 /* Main_iPhone.storyboard in Resources */,
+				83CEEACE18DA60DC001FF49F /* database.sql in Resources */,
 				83B585EC18D9378800DA8848 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,9 +342,11 @@
 			files = (
 				83CEEAC518DA0435001FF49F /* Person.m in Sources */,
 				83B585F218D9378800DA8848 /* AppDelegate.m in Sources */,
+				83CEEACB18DA5888001FF49F /* SQLiteObject.m in Sources */,
 				83CEEABE18D9FE0C001FF49F /* AddContactViewController.m in Sources */,
 				83CEEABB18D9FD96001FF49F /* ContactsViewController.m in Sources */,
 				83CEEAC118D9FE73001FF49F /* ViewContactViewController.m in Sources */,
+				83CEEACA18DA5888001FF49F /* SQLiteManager.m in Sources */,
 				83B585EE18D9378800DA8848 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

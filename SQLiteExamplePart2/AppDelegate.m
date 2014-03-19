@@ -5,14 +5,26 @@
 //  Created by chris warner on 3/18/14.
 //  Copyright (c) 2014 conedogers. All rights reserved.
 //
-
 #import "AppDelegate.h"
+#include "sqlite3.h"
+#import "SQLiteObject.h"
+#import "SQLiteManager.h"
+#import "Person.h"
 
 @implementation AppDelegate
+{
+    NSMutableArray *_contacts;
+    
+    sqlite3 *_database; // the pointer to the open database connection.
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // initialize database on first run.
+    [SQLiteManager initializeDatabase];
+    
+    _database = [SQLiteManager newConnection];  //open the database
+    _contacts = [Person getAllPersonsFromDatabase:_database];
     return YES;
 }
 							
@@ -41,6 +53,8 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [SQLiteManager closeConnection:_database];
+    _database = NULL;
 }
 
 @end
