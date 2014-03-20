@@ -31,6 +31,7 @@
 		83CEEACE18DA60DC001FF49F /* database.sql in Resources */ = {isa = PBXBuildFile; fileRef = 83CEEACD18DA60DC001FF49F /* database.sql */; };
 		83CEEAD118DA6411001FF49F /* Person+AddNewPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEAD018DA6411001FF49F /* Person+AddNewPerson.m */; };
 		83CEEAD418DA75EC001FF49F /* Person+DeletePerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEAD318DA75EC001FF49F /* Person+DeletePerson.m */; };
+		83CEEAD718DA829B001FF49F /* Person+ReadPersons.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEAD618DA829B001FF49F /* Person+ReadPersons.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		83CEEAD018DA6411001FF49F /* Person+AddNewPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+AddNewPerson.m"; sourceTree = "<group>"; };
 		83CEEAD218DA75EC001FF49F /* Person+DeletePerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+DeletePerson.h"; sourceTree = "<group>"; };
 		83CEEAD318DA75EC001FF49F /* Person+DeletePerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+DeletePerson.m"; sourceTree = "<group>"; };
+		83CEEAD518DA829B001FF49F /* Person+ReadPersons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+ReadPersons.h"; sourceTree = "<group>"; };
+		83CEEAD618DA829B001FF49F /* Person+ReadPersons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+ReadPersons.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +177,8 @@
 				83CEEAD018DA6411001FF49F /* Person+AddNewPerson.m */,
 				83CEEAD218DA75EC001FF49F /* Person+DeletePerson.h */,
 				83CEEAD318DA75EC001FF49F /* Person+DeletePerson.m */,
+				83CEEAD518DA829B001FF49F /* Person+ReadPersons.h */,
+				83CEEAD618DA829B001FF49F /* Person+ReadPersons.m */,
 			);
 			path = SQLiteExamplePart2;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				83CEEABE18D9FE0C001FF49F /* AddContactViewController.m in Sources */,
 				83CEEABB18D9FD96001FF49F /* ContactsViewController.m in Sources */,
 				83CEEAC118D9FE73001FF49F /* ViewContactViewController.m in Sources */,
+				83CEEAD718DA829B001FF49F /* Person+ReadPersons.m in Sources */,
 				83CEEACA18DA5888001FF49F /* SQLiteManager.m in Sources */,
 				83B585EE18D9378800DA8848 /* main.m in Sources */,
 				83CEEAD118DA6411001FF49F /* Person+AddNewPerson.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  Person.m
+//  Person+ReadPersons.h
 //  SQLiteExamplePart2
 //
 //  Created by chris warner on 3/19/14.
@@ -8,6 +8,8 @@
 
 #import "Person.h"
 
-@implementation Person
+@interface Person (ReadPersons)
+
++(NSMutableArray *)getAllPersonsFromDatabase:(sqlite3 *)database;
 
 @end

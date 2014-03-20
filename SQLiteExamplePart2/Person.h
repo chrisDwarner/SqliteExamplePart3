@@ -16,5 +16,4 @@
 @property (nonatomic, copy) NSString *last;
 @property (nonatomic, copy) NSString *phone;
 
-+(NSMutableArray *)getAllPersonsFromDatabase:(sqlite3 *)database;
 @end

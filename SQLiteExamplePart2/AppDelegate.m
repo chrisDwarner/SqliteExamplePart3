@@ -9,8 +9,8 @@
 #include "sqlite3.h"
 #import "SQLiteObject.h"
 #import "SQLiteManager.h"
-#import "Person.h"
 #import "ContactsViewController.h"
+#import "Person+ReadPersons.h"
 
 @implementation AppDelegate
 {
