@@ -118,5 +118,9 @@
     [self.delegate viewContactViewControllerDidCancel:self];
 }
 
+-(IBAction)deleteContact:(id)sender
+{
+    [self.delegate viewContactViewControllerDidDelete:self Contact:_person];
+}
 
 @end

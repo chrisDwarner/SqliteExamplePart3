@@ -14,6 +14,7 @@
 @protocol ViewContactViewControllerDelegate <NSObject>
 
 -(void) viewContactViewControllerDidCancel:(ViewContactViewController *)controller;
+-(void) viewContactViewControllerDidDelete:(ViewContactViewController *)controller Contact:(Person *)person;
 
 @end
 
@@ -27,5 +28,5 @@
 @property (nonatomic, weak) id<ViewContactViewControllerDelegate> delegate;
 
 -(IBAction)cancel:(id)sender;
-
+-(IBAction)deleteContact:(id)sender;
 @end

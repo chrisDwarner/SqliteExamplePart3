@@ -136,6 +136,11 @@
                                 <action selector="cancel:" destination="HwS-A6-0GY" id="XyN-Nc-zvK"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="R53-jN-Og4">
+                            <connections>
+                                <action selector="deleteContact:" destination="HwS-A6-0GY" id="iqS-91-MNB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="firstName" destination="tAE-Zx-sTl" id="GIE-Zy-WDm"/>

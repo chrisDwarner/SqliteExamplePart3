@@ -30,6 +30,7 @@
 		83CEEACB18DA5888001FF49F /* SQLiteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEAC918DA5888001FF49F /* SQLiteObject.m */; };
 		83CEEACE18DA60DC001FF49F /* database.sql in Resources */ = {isa = PBXBuildFile; fileRef = 83CEEACD18DA60DC001FF49F /* database.sql */; };
 		83CEEAD118DA6411001FF49F /* Person+AddNewPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEAD018DA6411001FF49F /* Person+AddNewPerson.m */; };
+		83CEEAD418DA75EC001FF49F /* Person+DeletePerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEAD318DA75EC001FF49F /* Person+DeletePerson.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		83CEEACD18DA60DC001FF49F /* database.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = database.sql; sourceTree = "<group>"; };
 		83CEEACF18DA6411001FF49F /* Person+AddNewPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+AddNewPerson.h"; sourceTree = "<group>"; };
 		83CEEAD018DA6411001FF49F /* Person+AddNewPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+AddNewPerson.m"; sourceTree = "<group>"; };
+		83CEEAD218DA75EC001FF49F /* Person+DeletePerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+DeletePerson.h"; sourceTree = "<group>"; };
+		83CEEAD318DA75EC001FF49F /* Person+DeletePerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+DeletePerson.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 				83CEEAC418DA0435001FF49F /* Person.m */,
 				83CEEACF18DA6411001FF49F /* Person+AddNewPerson.h */,
 				83CEEAD018DA6411001FF49F /* Person+AddNewPerson.m */,
+				83CEEAD218DA75EC001FF49F /* Person+DeletePerson.h */,
+				83CEEAD318DA75EC001FF49F /* Person+DeletePerson.m */,
 			);
 			path = SQLiteExamplePart2;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83CEEAD418DA75EC001FF49F /* Person+DeletePerson.m in Sources */,
 				83CEEAC518DA0435001FF49F /* Person.m in Sources */,
 				83B585F218D9378800DA8848 /* AppDelegate.m in Sources */,
 				83CEEACB18DA5888001FF49F /* SQLiteObject.m in Sources */,

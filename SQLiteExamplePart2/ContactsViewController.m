@@ -8,6 +8,7 @@
 
 #import "ContactsViewController.h"
 #import "AddContactViewController.h"
+#import "Person+DeletePerson.h"
 
 
 @interface ContactsViewController ()
@@ -170,6 +171,14 @@
 
 -(void) viewContactViewControllerDidCancel:(ViewContactViewController *)controller
 {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void) viewContactViewControllerDidDelete:(ViewContactViewController *)controller Contact:(Person *)person
+{
+    [Person deletePersonWithIndex:person.primaryKey fromDatabase:person.database];
+    [_contactList removeObject:person];
+    [self.tableView reloadData];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
