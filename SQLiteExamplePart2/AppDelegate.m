@@ -10,6 +10,7 @@
 #import "SQLiteObject.h"
 #import "SQLiteManager.h"
 #import "Person.h"
+#import "ContactsViewController.h"
 
 @implementation AppDelegate
 {
@@ -25,6 +26,12 @@
     
     _database = [SQLiteManager newConnection];  //open the database
     _contacts = [Person getAllPersonsFromDatabase:_database];
+    
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    ContactsViewController *contactsViewController = [navigationController viewControllers][0];
+    contactsViewController.contactList = _contacts;
+    contactsViewController.database = _database;
+    
     return YES;
 }
 							

@@ -20,7 +20,7 @@
 @property (nonatomic, assign) BOOL dirty;
 
 -(id) init;
--(id) initWithPrimaryKey:(NSInteger)pk database:(sqlite3 *)db;
+-(id) initWithPrimaryKey:(NSInteger)pk AndDatabase:(sqlite3 *)db;
 -(BOOL) isConnected;
 
 @end

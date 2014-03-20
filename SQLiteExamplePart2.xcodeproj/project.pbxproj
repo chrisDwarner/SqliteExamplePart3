@@ -29,6 +29,7 @@
 		83CEEACA18DA5888001FF49F /* SQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEAC718DA5888001FF49F /* SQLiteManager.m */; };
 		83CEEACB18DA5888001FF49F /* SQLiteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEAC918DA5888001FF49F /* SQLiteObject.m */; };
 		83CEEACE18DA60DC001FF49F /* database.sql in Resources */ = {isa = PBXBuildFile; fileRef = 83CEEACD18DA60DC001FF49F /* database.sql */; };
+		83CEEAD118DA6411001FF49F /* Person+AddNewPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEAD018DA6411001FF49F /* Person+AddNewPerson.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		83CEEAC818DA5888001FF49F /* SQLiteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQLiteObject.h; path = SQLiteExamplePart2/SQLiteObject.h; sourceTree = "<group>"; };
 		83CEEAC918DA5888001FF49F /* SQLiteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLiteObject.m; path = SQLiteExamplePart2/SQLiteObject.m; sourceTree = "<group>"; };
 		83CEEACD18DA60DC001FF49F /* database.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = database.sql; sourceTree = "<group>"; };
+		83CEEACF18DA6411001FF49F /* Person+AddNewPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+AddNewPerson.h"; sourceTree = "<group>"; };
+		83CEEAD018DA6411001FF49F /* Person+AddNewPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+AddNewPerson.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,8 @@
 				83CEEAC018D9FE73001FF49F /* ViewContactViewController.m */,
 				83CEEAC318DA0435001FF49F /* Person.h */,
 				83CEEAC418DA0435001FF49F /* Person.m */,
+				83CEEACF18DA6411001FF49F /* Person+AddNewPerson.h */,
+				83CEEAD018DA6411001FF49F /* Person+AddNewPerson.m */,
 			);
 			path = SQLiteExamplePart2;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				83CEEAC118D9FE73001FF49F /* ViewContactViewController.m in Sources */,
 				83CEEACA18DA5888001FF49F /* SQLiteManager.m in Sources */,
 				83B585EE18D9378800DA8848 /* main.m in Sources */,
+				83CEEAD118DA6411001FF49F /* Person+AddNewPerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *firstName;
 @property (weak, nonatomic) IBOutlet UITextField *lastName;
 @property (weak, nonatomic) IBOutlet UITextField *phone;
+@property (nonatomic, assign) sqlite3 *database;
 
 @property (nonatomic, weak) id<AddContactViewControllerDelegate> delegate;
 

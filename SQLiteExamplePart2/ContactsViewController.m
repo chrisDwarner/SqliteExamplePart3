@@ -29,7 +29,13 @@
 {
     [super viewDidLoad];
     
-    _contactList = [[NSMutableArray alloc] init];
+    if (self.contactList) {
+        _contactList = self.contactList;
+    }
+    else {
+        _contactList = [[NSMutableArray alloc] init];
+    }
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -54,7 +60,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.contactList count];
+    return [_contactList count];
 }
 
 
@@ -121,6 +127,7 @@
         UINavigationController *navigationController = segue.destinationViewController;
         AddContactViewController *addContactViewController = [navigationController viewControllers][0];
         addContactViewController.delegate = self;
+        addContactViewController.database = self.database;
     }
     if ([identifier isEqualToString:@"ViewContact"]) {
         UINavigationController *navigationController = segue.destinationViewController;

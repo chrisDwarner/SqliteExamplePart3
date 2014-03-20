@@ -13,5 +13,6 @@
 @interface ContactsViewController : UITableViewController <AddContactViewControllerDelegate, ViewContactViewControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *contactList;
+@property (nonatomic, assign) sqlite3 *database;
 
 @end

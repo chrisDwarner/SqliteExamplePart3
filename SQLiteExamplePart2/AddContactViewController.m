@@ -7,6 +7,7 @@
 //
 
 #import "AddContactViewController.h"
+#import "Person+AddNewPerson.h"
 
 @interface AddContactViewController ()
 
@@ -110,10 +111,10 @@
 
 -(IBAction)done:(id)sender
 {
-    Person *person = [[Person alloc] init];
-    person.first = self.firstName.text;
-    person.last = self.lastName.text;
-    person.phone = self.phone.text;
+    Person *person = [Person addNewPersonWithFirstName:self.firstName.text
+                                              LastName:self.lastName.text
+                                              andPhone:self.phone.text
+                                           intoDatbase:self.database];
     
     [self.delegate addContactViewControllerDidAddContact:self didAddContact:person];
     

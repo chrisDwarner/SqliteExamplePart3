@@ -25,7 +25,7 @@
     return self;
 }
 
--(id) initWithPrimaryKey:(NSInteger)pk database:(sqlite3 *)db
+-(id) initWithPrimaryKey:(NSInteger)pk AndDatabase:(sqlite3 *)db
 {
     if( self = [super init] )
     {
