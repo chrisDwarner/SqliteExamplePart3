@@ -52,7 +52,11 @@
                                 <segue destination="fPt-XB-jfm" kind="modal" identifier="AddContact" modalTransitionStyle="flipHorizontal" id="rtz-eK-lef"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="AEV-RW-9PN"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="AEV-RW-9PN">
+                            <connections>
+                                <action selector="deleteAction:" destination="XgU-8x-cCh" id="nRG-2p-yj2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vel-7s-HrL" userLabel="First Responder" sceneMemberID="firstResponder"/>

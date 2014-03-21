@@ -16,6 +16,9 @@
 @end
 
 @implementation ContactsViewController
+{
+    BOOL _isEditingEnabled;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,6 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _isEditingEnabled = NO;
     
     if (self.contactList) {
         _contactList = self.contactList;
@@ -180,6 +185,12 @@
     [_contactList removeObject:person];
     [self.tableView reloadData];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(IBAction)deleteAction:(id)sender
+{
+    _isEditingEnabled = !_isEditingEnabled;
+    self.tableView.editing = _isEditingEnabled;
 }
 
 @end
