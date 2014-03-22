@@ -1,23 +1,22 @@
 //
-//  ViewContactViewController.m
+//  UpdateConactViewController.m
 //  SQLiteExamplePart2
 //
-//  Created by chris warner on 3/19/14.
+//  Created by chris warner on 3/21/14.
 //  Copyright (c) 2014 conedogers. All rights reserved.
 //
 
-#import "ViewContactViewController.h"
 #import "UpdateContactViewController.h"
-#import "Person+WritePerson.h"
 
-@interface ViewContactViewController ()
+@interface UpdateContactViewController ()
 
 @end
 
-@implementation ViewContactViewController
+@implementation UpdateContactViewController
 {
     Person *_person;
 }
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -52,13 +51,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    [self.firstName becomeFirstResponder];
+}
 #pragma mark - Table view data source
-
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
     
     // Configure the cell...
     
@@ -104,40 +106,30 @@
 }
 */
 
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSString *identifier = segue.identifier;
-    
-    if ([identifier isEqualToString:@"UpdateContact"]) {
-        UINavigationController *navigationController = segue.destinationViewController;
-        UpdateContactViewController *updateContactViewController = [navigationController viewControllers][0];
-        updateContactViewController.delegate = self;
-        updateContactViewController.person = _person;
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+- (IBAction)save:(id)sender
+{
+    if (_person) {
+        _person.first = self.firstName.text;
+        _person.last = self.lastName.text;
+        _person.phone = self.phoneNumber.text;
     }
+
+    [self.delegate updateContactViewControllerDidUpdate:self withPerson:_person];
 }
 
--(IBAction)cancel:(id)sender
+- (IBAction)cancel:(id)sender
 {
-    [self.delegate viewContactViewControllerDidCancel:self];
+    [self.delegate updateContactViewControllerDidCancel:self];
 }
-
--(void) updateContactViewControllerDidCancel:(UpdateContactViewController *)controller
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void) updateContactViewControllerDidUpdate:(UpdateContactViewController *)controller withPerson:(Person *)person
-{
-    [person updateTheDatabase];
-    self.firstName.text = person.first;
-    self.lastName.text = person.last;
-    self.phoneNumber.text = person.phone;
-    
-    [self dismissViewControllerAnimated:NO completion:nil];
-    [self.delegate viewContactViewControllerDidUpdate:self withPerson:person];
-}
-
 @end

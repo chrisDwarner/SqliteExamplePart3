@@ -16,4 +16,10 @@
 @property (nonatomic, copy) NSString *last;
 @property (nonatomic, copy) NSString *phone;
 
+// we need to overload the sysnthesized methods so we can
+// pick up when the data changes.
+-(void) setFirst:(NSString *)value;
+-(void) setLast:(NSString *)value;
+-(void) setPhone:(NSString *)value;
+
 @end

@@ -9,6 +9,7 @@
 #import "ContactsViewController.h"
 #import "AddContactViewController.h"
 #import "Person+DeletePerson.h"
+#import "Person+WritePerson.h"
 
 
 @interface ContactsViewController ()
@@ -93,18 +94,23 @@
 }
 */
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        int index = (int)indexPath.row;
+        // get the person
+        Person *person = (Person *)[_contactList objectAtIndex:index];
+        if (person) {
+            [Person deletePersonWithIndex:person.primaryKey fromDatabase:person.database];
+            [_contactList removeObject:person];
+        }
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
 /*
 // Override to support rearranging the table view.
@@ -179,10 +185,9 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void) viewContactViewControllerDidDelete:(ViewContactViewController *)controller Contact:(Person *)person
+-(void) viewContactViewControllerDidUpdate:(ViewContactViewController *)controller withPerson:(Person *)person;
 {
-    [Person deletePersonWithIndex:person.primaryKey fromDatabase:person.database];
-    [_contactList removeObject:person];
+    [_contactList makeObjectsPerformSelector:@selector(updateTheDatabase)];
     [self.tableView reloadData];
     [self dismissViewControllerAnimated:YES completion:nil];
 }

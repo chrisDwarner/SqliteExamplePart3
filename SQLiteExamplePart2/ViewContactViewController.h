@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UpdateContactViewController.h"
 #import "Person.h"
 
 @class ViewContactViewController;
@@ -14,11 +15,11 @@
 @protocol ViewContactViewControllerDelegate <NSObject>
 
 -(void) viewContactViewControllerDidCancel:(ViewContactViewController *)controller;
--(void) viewContactViewControllerDidDelete:(ViewContactViewController *)controller Contact:(Person *)person;
+-(void) viewContactViewControllerDidUpdate:(ViewContactViewController *)controller withPerson:(Person *)person;
 
 @end
 
-@interface ViewContactViewController : UITableViewController
+@interface ViewContactViewController : UITableViewController <UpdateContactViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *firstName;
 @property (weak, nonatomic) IBOutlet UITextField *lastName;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
@@ -28,5 +29,4 @@
 @property (nonatomic, weak) id<ViewContactViewControllerDelegate> delegate;
 
 -(IBAction)cancel:(id)sender;
--(IBAction)deleteContact:(id)sender;
 @end

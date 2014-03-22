@@ -22,6 +22,7 @@
 		83B5860E18D9378800DA8848 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83B5860C18D9378800DA8848 /* InfoPlist.strings */; };
 		83B5861018D9378800DA8848 /* SQLiteExamplePart2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B5860F18D9378800DA8848 /* SQLiteExamplePart2Tests.m */; };
 		83B5862218D9383900DA8848 /* libSqLite3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B5861F18D9381800DA8848 /* libSqLite3.a */; };
+		83CCBAD618DCCFDE00893C72 /* UpdateContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CCBAD518DCCFDE00893C72 /* UpdateContactViewController.m */; };
 		83CEEABB18D9FD96001FF49F /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEABA18D9FD96001FF49F /* ContactsViewController.m */; };
 		83CEEABE18D9FE0C001FF49F /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEABD18D9FE0C001FF49F /* AddContactViewController.m */; };
 		83CEEAC118D9FE73001FF49F /* ViewContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CEEAC018D9FE73001FF49F /* ViewContactViewController.m */; };
@@ -79,6 +80,8 @@
 		83B5860D18D9378800DA8848 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		83B5860F18D9378800DA8848 /* SQLiteExamplePart2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLiteExamplePart2Tests.m; sourceTree = "<group>"; };
 		83B5861918D9381800DA8848 /* SqLite3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SqLite3.xcodeproj; path = ../SqLite3/SqLite3.xcodeproj; sourceTree = "<group>"; };
+		83CCBAD418DCCFDE00893C72 /* UpdateContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateContactViewController.h; sourceTree = "<group>"; };
+		83CCBAD518DCCFDE00893C72 /* UpdateContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateContactViewController.m; sourceTree = "<group>"; };
 		83CEEAB918D9FD96001FF49F /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		83CEEABA18D9FD96001FF49F /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		83CEEABC18D9FE0C001FF49F /* AddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContactViewController.h; sourceTree = "<group>"; };
@@ -184,6 +187,8 @@
 				83CEEAD618DA829B001FF49F /* Person+ReadPersons.m */,
 				83CEEAD818DA8392001FF49F /* Person+WritePerson.h */,
 				83CEEAD918DA8392001FF49F /* Person+WritePerson.m */,
+				83CCBAD418DCCFDE00893C72 /* UpdateContactViewController.h */,
+				83CCBAD518DCCFDE00893C72 /* UpdateContactViewController.m */,
 			);
 			path = SQLiteExamplePart2;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83CEEAD418DA75EC001FF49F /* Person+DeletePerson.m in Sources */,
+				83CCBAD618DCCFDE00893C72 /* UpdateContactViewController.m in Sources */,
 				83CEEAC518DA0435001FF49F /* Person.m in Sources */,
 				83B585F218D9378800DA8848 /* AppDelegate.m in Sources */,
 				83CEEACB18DA5888001FF49F /* SQLiteObject.m in Sources */,
