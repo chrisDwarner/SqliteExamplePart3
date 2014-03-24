@@ -11,6 +11,7 @@
 #import "SQLiteManager.h"
 #import "ContactsViewController.h"
 #import "Person+ReadPersons.h"
+#import "Person+WritePerson.h"
 
 @implementation AppDelegate
 {
@@ -43,6 +44,9 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+    // save out any updates in the contacts array.  Any person object marked as dirty, will be updated to the database.
+    [_contacts makeObjectsPerformSelector:@selector(updateTheDatabase)];
+    
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
@@ -59,6 +63,9 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    // save out any updates in the contacts array.  Any person object marked as dirty, will be updated to the database.
+    [_contacts makeObjectsPerformSelector:@selector(updateTheDatabase)];
+
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     [SQLiteManager closeConnection:_database];
     _database = NULL;

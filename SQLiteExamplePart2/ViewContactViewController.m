@@ -131,12 +131,18 @@
 
 -(void) updateContactViewControllerDidUpdate:(UpdateContactViewController *)controller withPerson:(Person *)person
 {
+    // update the record in the database.
     [person updateTheDatabase];
+    
+    // update the view.
     self.firstName.text = person.first;
     self.lastName.text = person.last;
     self.phoneNumber.text = person.phone;
     
+    // close the update view.
     [self dismissViewControllerAnimated:NO completion:nil];
+    
+    // now tell the contacts view that we have an update 
     [self.delegate viewContactViewControllerDidUpdate:self withPerson:person];
 }
 

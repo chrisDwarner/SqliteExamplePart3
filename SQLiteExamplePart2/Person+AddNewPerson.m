@@ -13,6 +13,8 @@
 +(id)addNewPersonWithFirstName:(NSString *)firstName LastName:(NSString *)lastName andPhone:(NSString *)phoneNumber intoDatbase:(sqlite3 *)database
 {
     Person *contact = nil;
+    
+    // here we build a string for the complete SQL query and values to insert.
     NSString *query = [NSString stringWithFormat:@"INSERT INTO Contacts (firstname, lastname, phone) VALUES ('%@','%@','%@')", firstName, lastName, phoneNumber ];
     int success = -1;
     sqlite3_stmt *statement = nil;
@@ -25,6 +27,7 @@
     }
     else
     {
+        // execute the query
         success = sqlite3_step( statement );
         if ( success == SQLITE_DONE )
         {
@@ -36,7 +39,10 @@
             contact.phone = phoneNumber;
         }
     }
+    
+    // cleanup
     sqlite3_finalize(statement);
+    statement = NULL;
     
     return contact;
 }

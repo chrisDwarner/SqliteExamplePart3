@@ -111,11 +111,13 @@
 
 -(IBAction)done:(id)sender
 {
+    // Create a new Person object and insert it into the database
     Person *person = [Person addNewPersonWithFirstName:self.firstName.text
                                               LastName:self.lastName.text
                                               andPhone:self.phone.text
                                            intoDatbase:self.database];
     
+    // cause the calling tableView controller to reubild it's data.
     [self.delegate addContactViewControllerDidAddContact:self didAddContact:person];
     
 }

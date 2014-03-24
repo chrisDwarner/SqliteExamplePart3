@@ -25,6 +25,7 @@
             // got some results, now parse the records returned.
             results = [[NSMutableArray alloc] init];
             
+            // loop through the results until you reach the end.
             while (sqlite3_step(statement) == SQLITE_ROW) {
                 // get the primary key
                 int primaryKey = sqlite3_column_int(statement, 0);

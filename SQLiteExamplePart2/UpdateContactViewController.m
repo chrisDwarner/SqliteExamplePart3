@@ -119,12 +119,14 @@
 
 - (IBAction)save:(id)sender
 {
+    // collect the updated information
     if (_person) {
         _person.first = self.firstName.text;
         _person.last = self.lastName.text;
         _person.phone = self.phoneNumber.text;
     }
 
+    // tell the delegate that we have a record to update.
     [self.delegate updateContactViewControllerDidUpdate:self withPerson:_person];
 }
 

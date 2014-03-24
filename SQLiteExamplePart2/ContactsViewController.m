@@ -103,7 +103,10 @@
         // get the person
         Person *person = (Person *)[_contactList objectAtIndex:index];
         if (person) {
+            
+            // delete the person from the database.
             [Person deletePersonWithIndex:person.primaryKey fromDatabase:person.database];
+            // now remove it from the datasource for the tableview.
             [_contactList removeObject:person];
         }
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -187,8 +190,13 @@
 
 -(void) viewContactViewControllerDidUpdate:(ViewContactViewController *)controller withPerson:(Person *)person;
 {
+    // make sure the list of contacts is up to date.
     [_contactList makeObjectsPerformSelector:@selector(updateTheDatabase)];
+    
+    // make the table reload it's data.
     [self.tableView reloadData];
+    
+    // dismiss the view person view controller.
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

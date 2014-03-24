@@ -22,11 +22,15 @@
             NSLog(@"Error failed to prepare sql with err %s", sqlite3_errmsg(_database));
         }
         else{
+            // bind the data to the query.  We need to make sure that we label the string
+            // data as SQLITE_TRANSIENT so that SQLite knows how to handle the memeory.
+            // the order of the binding is the order of the values on the update query string.
             sqlite3_bind_text(statement, 1, [self.first UTF8String], -1, SQLITE_TRANSIENT);
             sqlite3_bind_text(statement, 2, [self.last UTF8String], -1, SQLITE_TRANSIENT);
             sqlite3_bind_text(statement, 3, [self.phone UTF8String], -1, SQLITE_TRANSIENT);
             sqlite3_bind_int(statement, 4, self.primaryKey);
             
+            // execute the query
             error = sqlite3_step(statement);
             if (error != SQLITE_DONE) {
                 NSLog(@"Error failed to save with err %s", sqlite3_errmsg(_database));
