@@ -12,5 +12,4 @@
 
 -(int)updateTheDatabase;
 
-+(void) updatePerson:(Person *)person;
 @end

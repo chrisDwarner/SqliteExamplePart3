@@ -34,18 +34,11 @@
             error = sqlite3_step(statement);
             if (error != SQLITE_DONE) {
                 NSLog(@"Error failed to save with err %s", sqlite3_errmsg(_database));
-            }
+            } else _dirty = NO;  // succes, reset dirty flag.
         }
         sqlite3_finalize(statement);
     }
     return error;
-}
-
-+(void) updatePerson:(Person *)person
-{
-    if (person) {
-        [person updateTheDatabase];
-    }
 }
 
 @end
