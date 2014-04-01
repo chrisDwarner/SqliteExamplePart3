@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "83B585DD18D9378800DA8848"
-               BuildableName = "SQLiteExamplePart2.app"
+               BuildableName = "SQLiteExamplePart3.app"
                BlueprintName = "SQLiteExamplePart3"
                ReferencedContainer = "container:SQLiteExamplePart3.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "83B5860118D9378800DA8848"
-               BuildableName = "SQLiteExamplePart2Tests.xctest"
+               BuildableName = "SQLiteExamplePart3Tests.xctest"
                BlueprintName = "SQLiteExamplePart3Tests"
                ReferencedContainer = "container:SQLiteExamplePart3.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "83B585DD18D9378800DA8848"
-            BuildableName = "SQLiteExamplePart2.app"
+            BuildableName = "SQLiteExamplePart3.app"
             BlueprintName = "SQLiteExamplePart3"
             ReferencedContainer = "container:SQLiteExamplePart3.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "83B585DD18D9378800DA8848"
-            BuildableName = "SQLiteExamplePart2.app"
+            BuildableName = "SQLiteExamplePart3.app"
             BlueprintName = "SQLiteExamplePart3"
             ReferencedContainer = "container:SQLiteExamplePart3.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "83B585DD18D9378800DA8848"
-            BuildableName = "SQLiteExamplePart2.app"
+            BuildableName = "SQLiteExamplePart3.app"
             BlueprintName = "SQLiteExamplePart3"
             ReferencedContainer = "container:SQLiteExamplePart3.xcodeproj">
          </BuildableReference>
