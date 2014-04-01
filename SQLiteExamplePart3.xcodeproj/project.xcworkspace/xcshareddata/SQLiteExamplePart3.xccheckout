@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F0AEA08D-D66B-494E-AD44-331ED7E83AB5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SQLiteExamplePart3</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5D59AC59-C47B-40C9-826D-357B585B7437</key>
+		<string>https://github.com/chrisDwarner/SqliteExamplePart3.git</string>
+		<key>ED52B9BF-E912-45A2-9017-3AA96D32E8D9</key>
+		<string>https://github.com/chrisDwarner/SQLite.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SQLiteExamplePart3.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5D59AC59-C47B-40C9-826D-357B585B7437</key>
+		<string>../..</string>
+		<key>ED52B9BF-E912-45A2-9017-3AA96D32E8D9</key>
+		<string>../../../SqLite3</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/chrisDwarner/SqliteExamplePart3.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5D59AC59-C47B-40C9-826D-357B585B7437</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ED52B9BF-E912-45A2-9017-3AA96D32E8D9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SqLite3</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5D59AC59-C47B-40C9-826D-357B585B7437</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SqliteExamplePart3</string>
+		</dict>
+	</array>
+</dict>
+</plist>
