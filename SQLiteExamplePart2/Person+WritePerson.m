@@ -16,7 +16,7 @@
     
     if ([self isConnected] && _dirty) {
         sqlite3_stmt *statement = NULL;
-        const char *query = "UPDATE Contacts SET firstname = ?, lastname = ?, phone = ? WHERE idx = ?";
+        const char *query = "UPDATE Contacts SET firstname = ?, lastname = ?, phone = ?  photo = ? WHERE idx = ?";
         error = sqlite3_prepare_v2(_database, query, -1, &statement, NULL);
         if (error != SQLITE_OK) {
             NSLog(@"Error failed to prepare sql with err %s", sqlite3_errmsg(_database));
@@ -28,7 +28,9 @@
             sqlite3_bind_text(statement, 1, [self.first UTF8String], -1, SQLITE_TRANSIENT);
             sqlite3_bind_text(statement, 2, [self.last UTF8String], -1, SQLITE_TRANSIENT);
             sqlite3_bind_text(statement, 3, [self.phone UTF8String], -1, SQLITE_TRANSIENT);
-            sqlite3_bind_int(statement, 4, self.primaryKey);
+            // now we store the image into the database as a PNG for better compression.
+            sqlite3_bind_blob(statement, 4, [UIImagePNGRepresentation(self.photo) bytes], [UIImagePNGRepresentation(self.photo) length], SQLITE_TRANSIENT);
+            sqlite3_bind_int(statement, 5, self.primaryKey);
             
             // execute the query
             error = sqlite3_step(statement);

@@ -34,6 +34,15 @@
                 NSString *firstName = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 1)];
                 NSString *lastName = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 2)];
                 NSString *phone = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 3)];
+                UIImage *photo = nil;
+                
+                // We need two parameters to get the BLOB data.  the actual blob and the length in bytes.
+                NSData *imageData = [NSData dataWithBytes:sqlite3_column_blob(statement, 4) length:sqlite3_column_bytes(statement, 4)];
+                if (imageData) {
+                    
+                    // got it, stuff it into a UIImage
+                    photo = [UIImage imageWithData:imageData];
+                }
                 
                 // insert into an object
                 Person *contact = [[Person alloc] initWithPrimaryKey:primaryKey AndDatabase:database];
@@ -41,6 +50,7 @@
                     contact.first = firstName;
                     contact.last = lastName;
                     contact.phone = phone;
+                    contact.photo = photo;
                     
                     [results addObject:contact];
                 }

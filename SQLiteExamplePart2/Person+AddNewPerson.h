@@ -11,5 +11,6 @@
 @interface Person (AddNewPerson)
 
 +(id)addNewPersonWithFirstName:(NSString *)firstName LastName:(NSString *)lastName andPhone:(NSString *)phoneNumber intoDatbase:(sqlite3 *)database;
++(id)addNewPersonWithFirstName:(NSString *)firstName LastName:(NSString *)lastName phoneNumber:(NSString *)phoneNumber andPhoto:(UIImage *)photo intoDatbase:(sqlite3 *)database;
 
 @end
