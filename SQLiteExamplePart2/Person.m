@@ -54,5 +54,15 @@
     }
 }
 
+-(void) setPhoto:(UIImage *)value
+{
+    if (photo == nil) {
+        photo = value;
+    }
+    else {
+        photo = value;
+        self.dirty = YES;
+    }
+}
 
 @end
