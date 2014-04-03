@@ -36,6 +36,7 @@
         self.firstName.text = _person.first;
         self.lastName.text = _person.last;
         self.phoneNumber.text = _person.phone;
+        self.photo.image = _person.photo;
     }
     
     // Uncomment the following line to preserve selection between presentations.
@@ -124,6 +125,7 @@
         _person.first = self.firstName.text;
         _person.last = self.lastName.text;
         _person.phone = self.phoneNumber.text;
+        _person.photo = self.photo.image;
     }
 
     // tell the delegate that we have a record to update.

@@ -52,7 +52,7 @@
     Person *contact = nil;
     
     // here we build a string for the complete SQL query and values to insert.
-    NSString *query = @"INSERT INTO Contacts (firstname, lastname, phone, photo) VALUES ('?','?','?', ?)";
+    NSString *query = @"INSERT INTO Contacts (firstname, lastname, phone, photo) VALUES (?,?,?,?)";
     int success = -1;
     sqlite3_stmt *statement = nil;
     

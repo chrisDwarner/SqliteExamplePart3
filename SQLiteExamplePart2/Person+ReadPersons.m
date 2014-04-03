@@ -18,7 +18,7 @@
         sqlite3_stmt *statement = NULL;
         
         // execute the Sql statement
-        int error = sqlite3_prepare_v2(database, "SELECT idx, firstname, lastname, phone FROM Contacts", -1, &statement, NULL);
+        int error = sqlite3_prepare_v2(database, "SELECT idx, firstname, lastname, phone, photo FROM Contacts", -1, &statement, NULL);
         
         if (error == SQLITE_OK)
         {

@@ -37,6 +37,7 @@
         self.firstName.text = _person.first;
         self.lastName.text = _person.last;
         self.phoneNumber.text = _person.phone;
+        self.photo.image = _person.photo;
     }
     
     // Uncomment the following line to preserve selection between presentations.
@@ -138,6 +139,7 @@
     self.firstName.text = person.first;
     self.lastName.text = person.last;
     self.phoneNumber.text = person.phone;
+    self.photo.image = person.photo;
     
     // close the update view.
     [self dismissViewControllerAnimated:NO completion:nil];
