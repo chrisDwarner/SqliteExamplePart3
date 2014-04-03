@@ -136,4 +136,89 @@
 {
     [self.delegate updateContactViewControllerDidCancel:self];
 }
+
+-(void)takePhoto
+{
+    UIActionSheet *dialog = nil;
+    
+    // present the action sheet that offers the user the choices for photos.
+    // open a dialog with an OK and cancel button
+    dialog = [[UIActionSheet alloc] initWithTitle:@""
+                                         delegate:self
+                                cancelButtonTitle:@"Cancel"
+                           destructiveButtonTitle:nil
+                                otherButtonTitles:@"Take Photo", @"Choose Existing Photo", @"Edit Photo", nil];
+    
+    dialog.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+    
+    // show the action dialog on top of the photo.
+    [dialog showFromRect:self.photo.frame inView:self.view animated:YES];
+    
+}
+
+#pragma mark - UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    BOOL bCancel = NO;
+    UIImagePickerController *photoPicker = [[UIImagePickerController alloc] init];
+    photoPicker.delegate = self;
+    photoPicker.allowsEditing = YES;
+    
+    // we are processing a photo
+    switch (buttonIndex)
+    {
+        case 0: // take photo
+        {
+            if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+                photoPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            }
+            break;
+        }
+        case 1: // choose existing photo
+        {
+            if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+                photoPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            }
+            break;
+        }
+        case 2: // edit photo
+        {
+            if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+                photoPicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+            }
+            break;
+        }
+        default:
+            // cancel
+            bCancel = YES;
+            break;
+    }
+    if ( !bCancel )
+    {
+        // present the view controller.
+        [self presentViewController:photoPicker animated:YES completion:nil];
+    }
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *selectedImage = (UIImage *)[info valueForKey:UIImagePickerControllerEditedImage];
+    if ( selectedImage != nil )
+    {
+        self.photo.image = selectedImage;
+        
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+
 @end

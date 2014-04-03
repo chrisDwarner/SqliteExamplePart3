@@ -18,7 +18,7 @@
 
 @end
 
-@interface UpdateContactViewController : UITableViewController
+@interface UpdateContactViewController : UITableViewController <UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *firstName;
 @property (weak, nonatomic) IBOutlet UITextField *lastName;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
