@@ -16,7 +16,7 @@
 -(void)addContactViewControllerDidAddContact:(AddContactViewController *)controller didAddContact:(Person *)contact;
 
 @end
-@interface AddContactViewController : UITableViewController
+@interface AddContactViewController : UITableViewController <UIImagePickerControllerDelegate, UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *firstName;
 @property (weak, nonatomic) IBOutlet UITextField *lastName;
 @property (weak, nonatomic) IBOutlet UITextField *phone;
@@ -27,5 +27,6 @@
 
 -(IBAction)cancel:(id)sender;
 -(IBAction)done:(id)sender;
+-(IBAction)takePhoto:(id)sender;
 
 @end

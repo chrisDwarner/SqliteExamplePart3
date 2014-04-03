@@ -114,12 +114,96 @@
     // Create a new Person object and insert it into the database
     Person *person = [Person addNewPersonWithFirstName:self.firstName.text
                                               LastName:self.lastName.text
-                                              andPhone:self.phone.text
+                                           phoneNumber:self.phone.text
+                                              andPhoto:self.photo.image
                                            intoDatbase:self.database];
     
     // cause the calling tableView controller to reubild it's data.
     [self.delegate addContactViewControllerDidAddContact:self didAddContact:person];
     
 }
+
+-(IBAction)takePhoto:(id)sender
+{
+    UIActionSheet *dialog = nil;
+    
+    // present the action sheet that offers the user the choices for photos.
+    // open a dialog with an OK and cancel button
+    dialog = [[UIActionSheet alloc] initWithTitle:@""
+                                         delegate:self
+                                cancelButtonTitle:@"Cancel"
+                           destructiveButtonTitle:nil
+                                otherButtonTitles:@"Take Photo", @"Choose Existing Photo", @"Edit Photo", nil];
+    
+    dialog.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+
+    // show the action dialog on top of the photo.  
+    [dialog showFromRect:self.photo.frame inView:self.view animated:YES];
+
+}
+
+#pragma mark - UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    BOOL bCancel = NO;
+    UIImagePickerController *photoPicker = [[UIImagePickerController alloc] init];
+    photoPicker.delegate = self;
+    photoPicker.allowsEditing = YES;
+
+    // we are processing a photo
+    switch (buttonIndex)
+    {
+        case 0: // take photo
+        {
+            if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+                photoPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            }
+            break;
+        }
+        case 1: // choose existing photo
+        {
+            if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+                photoPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            }
+            break;
+        }
+        case 2: // edit photo
+        {
+            if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+                photoPicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+            }
+            break;
+        }
+        default:
+            // cancel
+            bCancel = YES;
+            break;
+    }
+    if ( !bCancel )
+    {
+        // present the view controller.
+        [self presentModalViewController:photoPicker animated:YES];
+    }
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *selectedImage = (UIImage *)[info valueForKey:UIImagePickerControllerEditedImage];
+    if ( selectedImage != nil )
+    {
+        self.photo.image = selectedImage;
+        
+    }
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+
 
 @end
