@@ -13,6 +13,7 @@
 @synthesize first;
 @synthesize last;
 @synthesize phone;
+@synthesize photo;
 
 // let the database connection know that something has changed
 // by overloading the setters that are created by the @systhesize.

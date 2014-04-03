@@ -16,17 +16,18 @@
 -(void)addContactViewControllerDidAddContact:(AddContactViewController *)controller didAddContact:(Person *)contact;
 
 @end
-@interface AddContactViewController : UITableViewController <UIImagePickerControllerDelegate, UIActionSheetDelegate>
+@interface AddContactViewController : UITableViewController <UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *firstName;
 @property (weak, nonatomic) IBOutlet UITextField *lastName;
 @property (weak, nonatomic) IBOutlet UITextField *phone;
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
+
 @property (nonatomic, assign) sqlite3 *database;
 
 @property (nonatomic, weak) id<AddContactViewControllerDelegate> delegate;
 
 -(IBAction)cancel:(id)sender;
 -(IBAction)done:(id)sender;
--(IBAction)takePhoto:(id)sender;
+-(void)takePhoto;
 
 @end

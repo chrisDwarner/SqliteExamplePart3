@@ -103,6 +103,13 @@
 }
 */
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0 && indexPath.section == 0) {
+        [self takePhoto];
+    }
+}
+
 #pragma mark - button selectors
 -(IBAction)cancel:(id)sender
 {
@@ -117,13 +124,14 @@
                                            phoneNumber:self.phone.text
                                               andPhoto:self.photo.image
                                            intoDatbase:self.database];
+  
     
     // cause the calling tableView controller to reubild it's data.
     [self.delegate addContactViewControllerDidAddContact:self didAddContact:person];
     
 }
 
--(IBAction)takePhoto:(id)sender
+-(void)takePhoto
 {
     UIActionSheet *dialog = nil;
     
@@ -182,7 +190,7 @@
     if ( !bCancel )
     {
         // present the view controller.
-        [self presentModalViewController:photoPicker animated:YES];
+        [self presentViewController:photoPicker animated:YES completion:nil];
     }
 }
 
@@ -195,13 +203,13 @@
         self.photo.image = selectedImage;
         
     }
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

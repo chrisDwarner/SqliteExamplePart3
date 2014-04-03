@@ -336,7 +336,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AFp-91-Fng">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ckK-wU-rY1">
                                                     <rect key="frame" x="83" y="0.0" width="154" height="169"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
@@ -423,7 +423,8 @@
                     <connections>
                         <outlet property="firstName" destination="CCP-P4-gk6" id="uxT-lT-8Jk"/>
                         <outlet property="lastName" destination="BQP-5p-mxo" id="hSL-9w-Xhm"/>
-                        <outlet property="photo" destination="AFp-91-Fng" id="i4p-u9-DwX"/>
+                        <outlet property="phone" destination="c56-hK-H3f" id="gMZ-WU-izt"/>
+                        <outlet property="photo" destination="ckK-wU-rY1" id="A0W-lJ-Izm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQb-N5-MIX" userLabel="First Responder" sceneMemberID="firstResponder"/>

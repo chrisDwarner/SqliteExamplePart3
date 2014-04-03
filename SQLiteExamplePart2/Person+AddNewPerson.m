@@ -66,7 +66,7 @@
     {
         // Now bind the variable to the prepared statement
         sqlite3_bind_text(statement, 1, [firstName UTF8String], -1, SQLITE_TRANSIENT);
-        sqlite3_bind_text(statement, 2, [lastname UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_text(statement, 2, [lastName UTF8String], -1, SQLITE_TRANSIENT);
         sqlite3_bind_text(statement, 3, [phoneNumber UTF8String], -1, SQLITE_TRANSIENT);
 
         // now we store the image into the database as a PNG for better compression.
