@@ -54,7 +54,6 @@
 
 -(void) viewWillAppear:(BOOL)animated
 {
-    [self.firstName becomeFirstResponder];
 }
 #pragma mark - Table view data source
 
@@ -118,6 +117,15 @@
 }
 */
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0 && indexPath.section == 0) {
+        [self takePhoto];
+    }
+}
+
+
 - (IBAction)save:(id)sender
 {
     // collect the updated information
@@ -151,7 +159,17 @@
     
     dialog.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
     
-    // show the action dialog on top of the photo.
+    if ([self.firstName isFirstResponder]) {
+        [self.firstName resignFirstResponder];
+    }
+    if ([self.lastName isFirstResponder]) {
+        [self.lastName resignFirstResponder];
+    }
+    if ([self.phoneNumber isFirstResponder]) {
+        [self.phoneNumber resignFirstResponder];
+    }
+    
+   // show the action dialog on top of the photo.
     [dialog showFromRect:self.photo.frame inView:self.view animated:YES];
     
 }

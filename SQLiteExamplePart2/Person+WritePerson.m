@@ -16,7 +16,7 @@
     
     if ([self isConnected] && _dirty) {
         sqlite3_stmt *statement = NULL;
-        const char *query = "UPDATE Contacts SET firstname = ?, lastname = ?, phone = ?  photo = ? WHERE idx = ?";
+        const char *query = "UPDATE Contacts SET firstname = ?, lastname = ?, phone = ?, photo = ? WHERE idx = ?";
         error = sqlite3_prepare_v2(_database, query, -1, &statement, NULL);
         if (error != SQLITE_OK) {
             NSLog(@"Error failed to prepare sql with err %s", sqlite3_errmsg(_database));
