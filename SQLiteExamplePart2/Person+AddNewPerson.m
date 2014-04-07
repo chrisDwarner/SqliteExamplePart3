@@ -38,6 +38,9 @@
             contact.last = lastName;
             contact.phone = phoneNumber;
         }
+        else {
+            NSLog(@"Failed with error %s", sqlite3_errmsg(database));
+        }
     }
     
     // cleanup
@@ -70,7 +73,7 @@
         sqlite3_bind_text(statement, 3, [phoneNumber UTF8String], -1, SQLITE_TRANSIENT);
 
         // now we store the image into the database as a PNG for better compression.
-        sqlite3_bind_blob(statement, 4, [UIImagePNGRepresentation(photo) bytes], [UIImagePNGRepresentation(photo) length], SQLITE_TRANSIENT);
+        sqlite3_bind_blob(statement, 4, [UIImagePNGRepresentation(photo) bytes], (int)[UIImagePNGRepresentation(photo) length], SQLITE_TRANSIENT);
 
         // execute the query
         success = sqlite3_step( statement );
@@ -83,6 +86,9 @@
             contact.last = lastName;
             contact.phone = phoneNumber;
             contact.photo = photo;
+        }
+        else {
+            NSLog(@"Failed with error %s", sqlite3_errmsg(database));
         }
     }
     

@@ -21,7 +21,7 @@
     }
     
     // bind the primary index to the statement
-    sqlite3_bind_int(statement, 1, index);
+    sqlite3_bind_int(statement, 1, (int)index);
     // execute the statement
     sqlite3_step( statement );
     // clean up

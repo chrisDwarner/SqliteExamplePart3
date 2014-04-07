@@ -29,8 +29,8 @@
             sqlite3_bind_text(statement, 2, [self.last UTF8String], -1, SQLITE_TRANSIENT);
             sqlite3_bind_text(statement, 3, [self.phone UTF8String], -1, SQLITE_TRANSIENT);
             // now we store the image into the database as a PNG for better compression.
-            sqlite3_bind_blob(statement, 4, [UIImagePNGRepresentation(self.photo) bytes], [UIImagePNGRepresentation(self.photo) length], SQLITE_TRANSIENT);
-            sqlite3_bind_int(statement, 5, self.primaryKey);
+            sqlite3_bind_blob(statement, 4, [UIImagePNGRepresentation(self.photo) bytes], (int)[UIImagePNGRepresentation(self.photo) length], SQLITE_TRANSIENT);
+            sqlite3_bind_int(statement, 5, (int)self.primaryKey);
             
             // execute the query
             error = sqlite3_step(statement);

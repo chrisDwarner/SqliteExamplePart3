@@ -56,6 +56,9 @@
                 }
             }
         }
+        else {
+            NSLog(@"Failed with error %s", sqlite3_errmsg(database));
+        }
         // clean up the SQL statement when your done.
         sqlite3_finalize(statement);
         statement = NULL;
