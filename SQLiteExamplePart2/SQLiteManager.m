@@ -44,10 +44,45 @@
                 if (error == SQLITE_OK)
                 {
                     NSLog(@"successfully created database");
+                    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"FirstRun"];
+                }
+                else {
+                    NSLog(@"Failed with error %s", sqlite3_errmsg(database));
                 }
             }
 
             [self closeConnection:database];
+        }
+    }
+    else {
+        // check to see if we have attempted to upgrade the database before.
+        // we only want to run the ALTER command once after an upgrade.
+        if ( [[NSUserDefaults standardUserDefaults] boolForKey:@"FirstRun"] == NO) {
+            // the file exists, so all we need to do is alter the existing table.
+            sqlite3 *database = [self newConnection];
+            // the database file does not exist, so we need to create one.
+            if (database)
+            {
+                // load the SQL commands that will create the database
+                NSString *sqlCommands = @"ALTER TABLE Contacts ADD photo BLOB DEFAULT NULL;";
+                
+                // any error message that sent back from sqlite when creating the database will go here.
+                char *szErrorMessage = NULL;
+                
+                // execute the sql commands
+                int error = sqlite3_exec(database, [sqlCommands UTF8String], NULL, NULL, &szErrorMessage);
+                
+                if (error == SQLITE_OK)
+                {
+                    NSLog(@"successfully created database");
+                    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"FirstRun"];
+                }
+                else {
+                    NSLog(@"Failed with error %s", sqlite3_errmsg(database));
+                }
+                
+                [self closeConnection:database];
+            }
         }
     }
 }
